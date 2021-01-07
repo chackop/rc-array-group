@@ -36,12 +36,15 @@ const ArrayGroup = () => {
 
   useEffect(() => {
     // let tempArray = [...Array(arrayItems).keys()];
-    let tempArray = [];
-    let totalVal = arrayItems;
-    while (totalVal--) {
-      tempArray.unshift(totalVal);
+    if (arrayItems > 0) {
+      let tempArray = [];
+      let totalVal = arrayItems;
+      while (totalVal--) {
+        tempArray.unshift(totalVal);
+      }
+      setoriginalArray(tempArray);
     }
-    setoriginalArray(tempArray);
+
     let allFieldsValid = arrayItems > 0 && arrayGroups > 0;
     if (allFieldsValid) {
       setFormIsValid(true);
